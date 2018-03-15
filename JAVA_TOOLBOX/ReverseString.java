@@ -12,9 +12,9 @@ public class ReverseString {
 	static String reverseString (String inputString) {
 
 		// Create a new string that is the reverse of the original string
-	    String reversedString = new StringBuilder(inputString).reverse().toString();
+		String reversedString = new StringBuilder(inputString).reverse().toString();
 		
-	    // Send the original string to the console for comparison.. comment out as necessary
+	    	// Send the original string to the console for comparison.. comment out as necessary
 		System.out.println(inputString);
 		
 		// return the reversedString-->
