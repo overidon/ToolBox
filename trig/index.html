@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <canvas id = "dataCanvas" width="400px" height="400px" style="border: 5px solid"></canvas>
+
+
+    <table>
+    <thead>
+      <tr>
+        <th>..</th>
+        <th>Angle</th>
+        <th>Sine</th>
+        <th>Cosine</th>
+        <th>Hyp</th>
+        <th>x Comp</th>
+        <th>y Comp</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>theta</td>
+        <td><div id="angle0"> ? </div></td>
+        <td><div id="sin0"> ? </div></td>
+        <td><div id="cos0"> ? </div></td>
+        <td><div id="hyp0"> ? </div></td>
+        <td><div id="xcom0"> ? </div></td>
+        <td><div id="ycom0"> ? </div></td>
+
+      </tr>
+      <tr>
+        <td>theta1</td>
+        <td><div id="angle1"> ? </div></td>
+        <td><div id="sin1"> ? </div></td>
+        <td><div id="cos1"> ? </div></td>
+        <td><div id="hyp1"> ? </div></td>
+        <td><div id="xcom1"> ?</div></td>
+        <td><div id="ycom1"> ? </div></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <h3>Please enter your angle integer below</h3>
+
+  <input type="text" id="myText" value="input...data...">
+
+  <button onclick="updateAngle()">Click to Increase Angle ++</button>
+
+  <button onclick="animateAngle()">Click to TOGGLE Animate Angle +1 Per Frame</button>
+
+  <p id="demo"></p>
+
+
+    <script src="geom.js"></script>
+    <script src="colors.js"></script>
+    <script src="index.js"></script>
+
+
+    <center>this is Tyler Stansfield Jaggers Trig training</center>
+    <center>this project is open source and free to use for teaching etc</center>
+    <center>MIT Liscence</center>
+    <center>This version 1.0 was updated March 26th, 2018</center>
+  </body>
+</html>
