@@ -28,8 +28,13 @@ public class IsPrime {
 			return (false);
 		}
 		
+		if (input % 2 == 0) {
+			System.out.println(" even NUMBER detected.........");
+			return (false);
+		}
 		
-		for (int i = 2; i < 13; i++){
+		
+		for (int i = 3; i <= Math.sqrt(input); i+=2){
 			
 			if (input > i){
 				
@@ -37,7 +42,7 @@ public class IsPrime {
 				// note how this check makes sure that the loop iterator of 'i' isn't larger or equal to..
 				// the input itself....
 
-				System.out.println("Input modulo i of: " + i + " is: " + (input % i));
+				System.out.println("Input modulo i of: " + i + " is: " + ( input % i ));
 						
 				if (input % i == 0){
 					return (false);
