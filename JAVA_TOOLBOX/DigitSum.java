@@ -3,26 +3,20 @@ package main;
 public class DigitSum {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		
 		System.out.println(digitSum (1776));
 	}
 	
 	static int digitSum(int n) {
 		
-		String cloneN = Integer.toString(n);
-		int digitSum = 0;
-		
-		for (int i = 0; i < cloneN.length(); i++){
-			
-			System.out.println(cloneN.charAt(i));
-			
-			digitSum += Character.getNumericValue(cloneN.charAt(i));
+		if (n == 0) {
+			return 0;
 		}
 		
+		System.out.println("The last digit is: " + n % 10);
+		System.out.println("Everything but the last digit is: " + n / 10);
 		
-		return digitSum;
+		return (n % 10) + sumDigits(n / 10);
 		
 	}
 
