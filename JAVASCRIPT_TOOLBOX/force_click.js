@@ -4,7 +4,7 @@
 
 // if the link has an id of 'link_test' ------> 
   
-///<a id="link_test" href="https://www.overidon.com" id="msft_scan">link_test</a>
+///<a id="link_test" href="https://www.overidon.com">link_test</a>
     
 // then from an appropriate place in javascript such as within a button, or more appropriately like a 
 // function that normally isn't connected to the UI, you could summon a basic click by doing...
