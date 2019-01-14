@@ -4,11 +4,15 @@ public class ReverseString {
 
 	public static void main(String[] args) {
 		
+		
 		System.out.println(reverseString("canyoureverseme?"));
+		
+		
+		System.out.println( reverseString_01A("Maxamillian_Balder'sGate"));
 
 	}
 	
-	
+	// low char count, yet this one requires using of StringBuilder... I'm going to test performance on this one... 
 	static String reverseString (String inputString) {
 
 		// Create a new string that is the reverse of the original string
