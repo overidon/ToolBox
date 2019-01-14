@@ -21,5 +21,20 @@ public class ReverseString {
 		return(reversedString);
 		
 	}
+	
+	// this is a more raw version where I'm converting the String into a char array manually and then
+	// putting the char array into a new String directly... it has significant performance benefit over concatentation 
+	public static String reverseString_01A(String input){
+		
+		
+		char [] array = new char[input.length()];
+		
+		for (int i = 0 ; i < input.length(); i++){
+			
+			array[input.length() - i - 1] = input.charAt(i); 
+		}
+		
+		return new String(array);
+	}
 
 }
