@@ -1,0 +1,26 @@
+	/*
+    GOAL:     Find the next index of an integer in an array of integers. 
+    INPUT:    An array of integers, a starting index, and a target integer to find.
+    RETURNS:  An integer index. 
+  
+  */
+  
+  
+  public static int findNextIndexOf ( int[] nums , int start, int target) {
+		
+		
+		
+		for (int i = start; i < nums.length; i++) {
+			
+			if ( nums[i] == target) {
+				
+				System.out.println("The target of: " + target + " was found at the index of: " + i);
+				return i;
+			}
+		}
+		
+		System.out.println("The target of: " + target + " could not be found...returning -1 error code now...");
+		
+		// todo 
+		return -1; 
+	}
