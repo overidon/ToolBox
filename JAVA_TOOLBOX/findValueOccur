@@ -1,0 +1,23 @@
+	/*
+    ©2019 - Tyler Stansfield Jaggers
+    GOAL: Find the number of integer values in an array that are equivalent to the target integer.
+    INPUT: Array of Integers, Integer Target
+    OUTPUT: Integer return of the number of occurances -> System output into the console etc. 
+  
+  */
+  
+  
+  public static int findValueOccur( int [] arr, int target ) {
+		
+		int total = 0; 
+		
+		for ( int i = 0; i < arr.length; i++) {
+			
+			if (arr[i] == target) total++;
+		}
+		
+		System.out.println("The total number of occurances for the target of: " + target + " is: " + total );
+		
+		return total; 
+		
+	}
