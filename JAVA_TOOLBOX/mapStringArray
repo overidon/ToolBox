@@ -1,0 +1,30 @@
+	/*
+    
+    GOAL: Map the number of times that a String Appears in an Array
+    INPUT: HashMap of String Keys and Integer Values (presumably empty), Array of Strings 
+    OUTPUT: HashMap of String Keys and Integer Values ->  HashMap<String, Integer>
+  
+  
+  */
+  
+  
+  
+  public HashMap<String, Integer> mapStringArray( HashMap<String, Integer > map, String[] squareData ) {
+		
+		// cycle through all the elements of the squareData array 
+		for (int i = 0; i < squareData.length; i++) {
+			
+			// if the map does not have a key for the 
+			if ( !map.containsKey( squareData[i])  ) {
+				
+				map.put( squareData[i], 1);
+			} else {
+				map.put( squareData[i], map.get(squareData[i] ) + 1);
+			}
+		}
+		
+		System.out.println("DEBUG DATA -> map: " + map);
+		
+		return map; 
+		
+	}
