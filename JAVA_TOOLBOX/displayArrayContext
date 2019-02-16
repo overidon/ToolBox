@@ -1,0 +1,42 @@
+  	/*
+    ©2019 - Tyler Stansfield Jaggers
+    GOAL_A: Display Integers starting at 0 and ascending to represent the indices of integers of an array 
+    GOAL_B: Display an Array of Integers on a single line without converting array into another structure
+    INPUT: Array of Integers
+    OUTPUT: Void return -> System output into the console etc. 
+  
+  */
+  
+  
+  public static void displayArrayContext(int[] arr) {
+		
+    	// display the context
+		System.out.println("");
+		System.out.print("-");
+		
+		for (int i = 0; i < arr.length; i++) {
+			if (i == arr.length - 1) {
+				System.out.print(i);
+			} else {
+				System.out.print(i + ", ");
+			}
+		}
+		
+		System.out.print("-");
+
+		
+		// display the original array 
+		System.out.println("");
+		System.out.print("[");
+		
+		for (int i = 0; i < arr.length; i++) {
+			if (i == arr.length - 1) {
+				System.out.print(arr[i]);
+			} else {
+				System.out.print(arr[i] + ", ");
+			}
+		}
+		
+		System.out.print("]");
+		System.out.println("");		
+	}
