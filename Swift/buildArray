@@ -1,0 +1,52 @@
+import Cocoa
+
+var str = "Hello, playground"
+
+func random() -> CGFloat {
+    return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+}
+
+func random(min: CGFloat, max: CGFloat) -> CGFloat {
+    return random() * (max - min) + min
+}
+
+
+
+var randomNum = Int.random(in: 1...4)
+
+print  (randomNum)
+
+
+
+func randInRange( min: Int, max: Int) -> Int {
+    
+    return Int.random( in: min...max)
+}
+
+
+let item = randInRange(min: 4, max: 12)
+
+print(item)
+
+
+var sampleSet = [Int]()
+
+sampleSet.append(item)
+
+print ( sampleSet )
+
+// void version -> O(n) speed performance -> O(n) space performance
+func buildArray(  numberOfItems: Int ) -> [Int]{
+    var arr = [Int]()
+    for _ in 0..<numberOfItems {
+        let item = randInRange(min: -100, max: 100)
+        
+        arr.append(item)
+    }
+    
+    return arr;
+}
+
+var data = buildArray(numberOfItems: 12)
+
+print(data)
