@@ -1,0 +1,17 @@
+// the stop is exclusive for the top of the range...
+// this is for a non-sorted array.. otherwise just use zeroth index
+func minimum ( arr: [Int], start_index: Int, stop_index: Int) -> Int {
+    
+    // assign the minimum to the be the value of the array at the start
+    // this is so we don't get strange results with negative numbers
+    var min = arr[start_index]
+    
+    for x in start_index...stop_index {
+        if arr[x] < min {
+            min = arr[x]
+        }
+    }
+    
+    return min
+    
+}
