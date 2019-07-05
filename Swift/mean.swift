@@ -11,7 +11,5 @@ func mean ( arr : [Int], start: Int, stop: Int ) -> Double {
     
     print ("The total so far is: \(total)")
     
-    var numberOfItems = arr.count
-    
-    return Double(total) / Double(numberOfItems)
+    return Double(total) / Double(arr.count)
 }
