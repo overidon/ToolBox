@@ -30,9 +30,7 @@ func getSubstring( phrase: String,  start: Int, stop: Int) -> String {
     let back = phrase.index ( phrase.startIndex, offsetBy: stop )
     
     let substring1 = phrase[front..<back]
-    
-    print ( substring1)
-    
+   
     // cast as a String before returning...
     return String ( substring1 )
 }
