@@ -1,0 +1,179 @@
+public static int fromBase10BaseN( String s, int radix) {
+		
+		
+		
+		// given an integer "n" in base 2  ...
+		// return a new integer that is in the base of "b" ... without leading zeroes... 
+		
+		// 10 in base 2 --
+		// 1010 
+		
+		// 10 in base 3 
+		// 021
+		
+		// 10 in base 3
+		
+		// TODO -> 
+		
+		boolean debug = true; 
+		
+		// make an integer representing a base 2 version of a string which represents a base 2 number
+		
+		LinkedList<Integer> b2 = new LinkedList<Integer>();
+		
+		
+		int b10 = Integer.parseInt(s);
+		
+
+		if ( debug ) System.out.println("The current value of b10 is: " + b10 );
+		if ( debug ) System.out.println("The base (radix)  is: " + radix );
+		
+		int[] place_control = findHighestBase(b10, radix);
+		
+		System.out.println("\nTHE TEST first current place of : " + b10 + " is: " + place_control[0]);
+		System.out.println("\nTHE value of the first current place of : " + b10 + " is: " + place_control[1]);
+		
+		int currentPlace = place_control[0];
+		int scale = place_control[1];
+		
+		
+		
+		while ( b10 >= 0 ) {
+			
+			if ( debug ) {
+				System.out.println("\nThe current value of b10 is: " + b10 );
+				System.out.println("The current place is: " + currentPlace );
+			}
+			
+			
+			if ( currentPlace  <= 1) {
+				
+				if ( debug ) {
+					
+					System.out.println("\n\nWARNING -----> Break area...");
+					System.out.println("The value of b10 is: " + b10);
+				}
+				
+				b2.add(b10);
+			
+				
+				break;
+			}
+			
+			
+			
+			if ( currentPlace <= b10 )  {
+				
+				int safe = 1; 
+				
+				for (int mult = 2; mult < radix; mult++ ) {
+					
+					if ( mult * currentPlace < b10 ) safe = mult; 
+					
+				}
+				
+				if ( debug ) System.out.println("ADDING  A " + safe + " to the end of the list.... ");
+				
+				
+				b2.add(safe);
+				
+				b10 -= safe * currentPlace; 
+				
+				
+				
+				
+			} else {
+				
+				if ( debug ) System.out.println("ADDING  A 0 to the end of the list.... ");
+				
+				b2.add(0);
+			}
+			currentPlace /= radix; 
+		}
+		
+		
+	 
+		if ( debug) System.out.println("The current value of b2 is now.... " + b2 );
+	
+		
+		
+		String data = "";
+		
+		for (int i = 0; i < b2.size(); i++) {
+			data += b2.get(i);
+		}
+		
+		// todo 
+		return Integer.parseInt(data);
+		
+		
+
+		
+	// end of the the fromBase10BaseN	
+	}
+  
+  
+  
+  
+  
+  
+  public static int[]  findHighestBase(int n, int radix) {
+		
+		
+		/*
+		 * The left number of the array is the highest PLACE of the number in the appropriate base 
+		 * The right number of the array is the value in that specific place 
+		 * 
+		 * THUS -> [9, 2]
+		 * MEANS -> in base 3 -> the 9's place has a value of 2 for the first number to the left... 
+		 */
+		
+		int power = 0;
+		
+		
+		int[] result = {0, 0}; 
+		
+		
+		
+		for (int i = 1; i < n; i++  ) {
+			
+
+			
+			for (int scale = 1; scale < radix; scale++) {
+				
+				int units = (int) Math.pow(radix, power);
+				
+				int temp = units * scale;
+				
+				if ( temp < 0 ) {
+					
+					System.out.println("EMERGENCY BREAK..... -> Exceeding 32 bit integer...");
+					i = n;
+					break;
+				}
+				
+				System.out.println("TEMP is: " + temp);
+				
+				if ( temp <= n)  {
+					System.out.println(" The number " + n + " is base " + radix + " potential digit...");
+					
+					result [0] = units;
+					result [1] = scale;
+				} 
+			}
+			
+			
+			
+			power++;
+		}
+		
+		return result; 
+		
+	// end of the findHighestBase method... 
+	}
+  
+  
+  
+  
+  
+  
