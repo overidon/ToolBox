@@ -1,0 +1,79 @@
+package main;
+
+public class swapPairs {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ListNode head_01       = new ListNode(1);
+		head_01.next           = new ListNode(2);
+		head_01.next.next      = new ListNode(3);
+		head_01.next.next.next = new ListNode(4);
+		
+		System.out.println("The first sytem is: "  + head_01);
+		
+		ListNode secondary = cleanCopy(head_01);
+		
+		System.out.println("The second sytem is: "  + secondary);
+		
+		
+
+	}
+	
+   
+   public static ListNode cleanCopy(ListNode head) {
+	   
+	   // headNew is the beginning of the clean copy that will be returned...
+	   ListNode headNew = new ListNode( head.val);
+	    
+	   //System.out.println("The new head is: " + headNew);
+	   
+	   // the runner is a pointer to the head argument / parameter (the original ) -> .next
+	   ListNode runner = head;
+	   
+	   // the RNA is the runner for the copy... this will be looking ahead... 
+	   ListNode RNA    = headNew; 
+	   
+	   while (runner.next != null) {
+		   
+		   RNA.next = new ListNode(runner.next.val);
+		   
+		   runner = runner.next; 
+		   
+		   RNA = RNA.next;
+		   
+	   }
+	   
+	   return headNew; 
+	   
+   // end of the cleanCopy method 
+   }
+   
+ 
+
+}
+
+class ListNode {
+	   int val;
+	   ListNode next;
+	   ListNode(int x) { val = x; }
+	   
+	   /*
+	   @Override
+	   public String toString() {
+		   return "[--> " + this.val + " --> " + this.next;
+	   }
+	   */
+	  
+	   
+}
+
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
