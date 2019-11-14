@@ -1,0 +1,92 @@
+/*
+ * PROJECT: AbsoluteSort
+ * FILE: AbsoluteSort.java
+ * GOAL: Sort an Array of integers by their absolute value -> LEAST to Greatest
+ * 
+ */
+
+
+package main;
+
+public class AbsoluteSort {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		int[] arr = {-12, 0, 15, 4, -17, 0, 11, 9, 0, 4, 6};
+		
+		displayArray(arr);
+		
+		
+		absSort(arr);
+		
+		
+		displayArray(arr);
+		
+		
+		
+	// end of the main driver method
+	}
+	
+	public static void displayArray(int[] arr) {
+			
+		System.out.print("\n[ ");
+		
+		for (int i = 0; i < arr.length; i++) {
+			
+			if (i == arr.length - 1) {
+				System.out.print(arr[i]);
+			} else {
+				System.out.print(arr[i] + ", ");
+			}
+		}
+		
+		System.out.print(" ]\n");
+	}
+	
+	
+	
+	public static void absSort(int[] arr) {
+		
+		int count = 0;
+		int max = arr.length - 1;
+		
+		while ( count < max) {
+			
+			for (int i = 0; i < arr.length - 1; i++) {
+				
+				int left  = Math.abs(arr[i]);
+				int right = Math.abs(arr[i + 1]);
+				
+				int orig_left = arr[i];
+				int orig_right = arr[i + 1];
+				
+				// swap em!
+				if (left > right) {
+					
+					arr[i + 1] = orig_left;
+					arr[i]     = orig_right;
+					
+					count = 0;
+					
+					// restart the loop
+					i = 0;
+				} else {
+					count++;
+				}
+			// end of the for loop 
+			}
+		
+		// end of the while loop
+		}
+		
+	
+		
+	// end of the absSort method
+	}
+
+	
+	
+// end of the AbsoluteSort class 	
+}
