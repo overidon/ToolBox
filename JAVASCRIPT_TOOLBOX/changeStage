@@ -11,3 +11,5 @@ function switchStage(stageNumber) {
   if (typeof fn === "function") fn();
 
 }
+
+// update
