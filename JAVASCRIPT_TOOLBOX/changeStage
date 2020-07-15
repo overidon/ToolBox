@@ -1,0 +1,13 @@
+
+function switchStage(stageNumber) {
+
+  // function we want to run -> you don't need the () if it doesn't take arguments... 
+  var fnstring = "zone" + stageNumber ;
+  
+  // find object
+  var fn = window[fnstring];
+
+  // is object a function?
+  if (typeof fn === "function") fn();
+
+}
