@@ -1,0 +1,37 @@
+import SpriteKit
+
+
+
+
+
+class InventoryScene: SKScene, SKPhysicsContactDelegate {
+
+
+
+    override func didMove(to view: SKView) {
+
+        backgroundColor = SKColor.green;
+
+        exitBlock.position = CGPoint(x: size.width / 2 - 200, y: size.height / 2  + 84);
+
+        exitBlock.zPosition = 2;
+        exitBlock.size = CGSize(width: 256, height: 128)
+
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        // 1 - choose one of the touches to work with
+        guard let touch = touches.first else {
+            return
+        }
+
+        if (exitBlock.contains(touch.location(in: self))){
+
+            print ("Play button touched...")
+
+            // go to the GameScene
+            let scene = GameScene(size:CGSize(width: self.size.width, height: self.size.height))
+        }
+    }
+} 
